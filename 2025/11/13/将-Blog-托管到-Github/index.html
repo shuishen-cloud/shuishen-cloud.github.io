@@ -6,15 +6,15 @@
   
   <title>将 Blog 托管到 Github | 水神的个人博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="就拿这一篇博客当作开头。 怎么能够写一篇教程呢，现在想想也是个麻烦事。 首先 Hexo 是基于 Node.js 的一个博客软件，通过 Node 的包管理器 npm 1npm install hexo-cli   来下载安装 Hexo 。 再新建一个文件夹来存储 Hexo 相关的文件（这里叫做 Hexo-Blog）并且切换: 1mkdir Hexo-Blog &amp;&amp; cd Hexo-B">
+  <meta name="description" content="就拿这一篇博客当作开头。  怎么能够写一篇教程呢，现在想想也是个麻烦事。 首先 Hexo 是基于 Node.js 的一个博客软件，通过 Node 的包管理器 npm 1npm install hexo-cli   来下载安装 Hexo 。 再新建一个文件夹来存储 Hexo 相关的文件（这里叫做 Hexo-Blog）并且切换: 1mkdir Hexo-Blog &amp;&amp; cd Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将 Blog 托管到 Github">
 <meta property="og:url" content="http://example.com/2025/11/13/%E5%B0%86-Blog-%E6%89%98%E7%AE%A1%E5%88%B0-Github/index.html">
 <meta property="og:site_name" content="水神的个人博客">
-<meta property="og:description" content="就拿这一篇博客当作开头。 怎么能够写一篇教程呢，现在想想也是个麻烦事。 首先 Hexo 是基于 Node.js 的一个博客软件，通过 Node 的包管理器 npm 1npm install hexo-cli   来下载安装 Hexo 。 再新建一个文件夹来存储 Hexo 相关的文件（这里叫做 Hexo-Blog）并且切换: 1mkdir Hexo-Blog &amp;&amp; cd Hexo-B">
+<meta property="og:description" content="就拿这一篇博客当作开头。  怎么能够写一篇教程呢，现在想想也是个麻烦事。 首先 Hexo 是基于 Node.js 的一个博客软件，通过 Node 的包管理器 npm 1npm install hexo-cli   来下载安装 Hexo 。 再新建一个文件夹来存储 Hexo 相关的文件（这里叫做 Hexo-Blog）并且切换: 1mkdir Hexo-Blog &amp;&amp; cd Hexo">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2025-11-13T12:21:12.000Z">
-<meta property="article:modified_time" content="2025-11-13T12:42:31.335Z">
+<meta property="article:modified_time" content="2025-11-13T12:56:33.507Z">
 <meta property="article:author" content="shuishen-lwy">
 <meta name="twitter:card" content="summary">
   
@@ -99,7 +99,9 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>就拿这一篇博客当作开头。</p>
+        <blockquote>
+<p>就拿这一篇博客当作开头。</p>
+</blockquote>
 <p>怎么能够写一篇教程呢，现在想想也是个麻烦事。</p>
 <p>首先 <code>Hexo</code> 是基于 <code>Node.js</code> 的一个博客软件，通过 <code>Node</code> 的包管理器 <code>npm</code></p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli </span><br></pre></td></tr></table></figure>
@@ -110,15 +112,24 @@
 
 <p>接下来是将文件夹初始化 <code>Hexo</code>：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo init</span><br></pre></td></tr></table></figure>
-
+<h3 id="如何新建一篇推文"><a href="#如何新建一篇推文" class="headerlink" title="如何新建一篇推文"></a>如何新建一篇推文</h3><h3 id="需要添加的几个插件"><a href="#需要添加的几个插件" class="headerlink" title="需要添加的几个插件"></a>需要添加的几个插件</h3><ul>
+<li><code>hexo-git-deploy</code>: 将 <code>Hexo</code> 部署到 <code>Github</code> 上。</li>
+<li><code>hexo-admotion</code>: 使 <code>Markdown</code> 文件支持 <code>Admotion</code> 语法。</li>
+</ul>
 <h2 id="如何将-Hexo-托管到-Github"><a href="#如何将-Hexo-托管到-Github" class="headerlink" title="如何将 Hexo 托管到 Github?"></a>如何将 Hexo 托管到 Github?</h2><ol>
-<li>在自己的 <code>Github</code> 仓库里新建一个仓库叫做 <code>&lt;你的 github 用户名&gt;.github.io</code>。</li>
+<li>在自己的 <code>Github</code> 仓库里新建一个仓库名为 <code>&lt;你的 Github 用户名&gt;.github.io</code>。</li>
+<li>修改 <code>Hexo-Blog</code> 目录中的 <code>_config.yml</code> 文件中的 <code>deploy</code> 为</li>
 </ol>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">delpoy:</span></span><br><span class="line">	<span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">	<span class="attr">repo:</span> <span class="string">git@github.com:&lt;你的</span> <span class="string">github</span> <span class="string">用户名&gt;/&lt;你的</span> <span class="string">Github</span> <span class="string">用户名&gt;.github.io</span></span><br><span class="line">	<span class="attr">branch:</span> <span class="string">main</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>需要特别说明的是，这里的 <code>repo</code> 使用的是 <code>ssh</code> 的地址名（<em>因为 <code>Github</code> 不再推荐使用 https</em>），因此你计算机的 <code>git</code> 必须已经设置了 <code>ssh</code> 公钥并且添加到了 <code>Github</code> 的 <code>SSH and...</code> 页面中。</p>
+</blockquote>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2025/11/13/%E5%B0%86-Blog-%E6%89%98%E7%AE%A1%E5%88%B0-Github/" data-id="cuidYEQt56KCmBg09LGNRKE7f" data-title="将 Blog 托管到 Github" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="http://example.com/2025/11/13/%E5%B0%86-Blog-%E6%89%98%E7%AE%A1%E5%88%B0-Github/" data-id="cuidYloL7FVJiARbWgCXaIi3O" data-title="将 Blog 托管到 Github" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
