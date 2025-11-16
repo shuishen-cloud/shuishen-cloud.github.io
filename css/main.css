@@ -2243,7 +2243,7 @@ input[type=checkbox] {
   margin: 1.5625em 0;
   padding: 0.6rem;
   overflow: hidden;
-  font-size: 0.85rem;
+  font-size: 14px;
   page-break-inside: avoid;
   border-left: 0.3rem solid #42b983;
   border-radius: 0.3rem;
